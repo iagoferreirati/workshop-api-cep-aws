@@ -18,5 +18,4 @@ jobs:
       #   aws_access_key: ${{ secrets.aws_access_key }}
       #   aws_secret_key: ${{ secrets.aws_secret_key }}
       run: |
-        sudo apt-get install -y docker
-        docker version
+        sudo apt-get install -y packer
