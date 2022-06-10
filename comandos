@@ -1,0 +1,2 @@
+docker build . -t nginx-local
+docker run -p 8082:80 nginx-local

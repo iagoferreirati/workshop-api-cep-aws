@@ -1,0 +1,21 @@
+
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build AMI
+      # env:
+      #   aws_access_key: ${{ secrets.aws_access_key }}
+      #   aws_secret_key: ${{ secrets.aws_secret_key }}
+      run: |
+        sudo apt-get install -y docker
