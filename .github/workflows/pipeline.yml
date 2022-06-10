@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
     - name: Build AMI
       env:
         aws_access_key: ${{ secrets.aws_access_key }}
@@ -20,4 +21,15 @@ jobs:
       run: |
         sudo apt-get install -y packer
         sudo packer build  -var "aws_access_key=${aws_access_key}" -var "aws_secret_key=${aws_secret_key}" ./packer/build.json
+        
+    - name: Terraform apply
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
+      run: |
+        sudo apt-get install -y terraform
+        cd terraform
+        terraform init
+        terraform plan
+        terrafomr apply
         
