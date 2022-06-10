@@ -24,6 +24,7 @@
       {
           "type": "shell",
           "inline": [
+            "sudo apt update",
             "sudo apt -y install ansible git",
             "ansible-playbook --connection=local /tmp/ansible/playbook-api.yml"
           ]
