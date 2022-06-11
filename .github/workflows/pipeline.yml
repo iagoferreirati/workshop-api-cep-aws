@@ -32,13 +32,4 @@ jobs:
         terraform init
         terraform plan -out plan.tf
         terraform apply -auto-approve plan.tf
-        
-    - name: Terraform destroy
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_key }}
-      run: |
-        sudo snap install terraform --classic
-        cd terraform
-        terraform init
         terraform destroy -auto-approve plan.tf
