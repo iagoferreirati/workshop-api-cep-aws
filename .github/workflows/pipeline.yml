@@ -31,5 +31,5 @@ jobs:
         cd terraform
         terraform init
         terraform plan -out plan.tf
-        terrafomr apply plan.tf -auto-approve
+        terraform apply plan.tf -auto-approve
         
