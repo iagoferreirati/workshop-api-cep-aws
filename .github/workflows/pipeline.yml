@@ -30,6 +30,6 @@ jobs:
         sudo snap install terraform --classic
         cd terraform
         terraform init
-        terraform plan
-        terrafomr apply -auto-approve
+        terraform plan -out plan.tf
+        terrafomr apply plan.tf -auto-approve
         
