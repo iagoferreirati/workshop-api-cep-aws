@@ -41,4 +41,4 @@ jobs:
         sudo snap install terraform --classic
         cd terraform
         terraform init
-        terraform destroy -auto-approve
+        terraform destroy -auto-approve plan.tf
