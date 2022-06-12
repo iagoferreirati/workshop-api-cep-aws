@@ -24,6 +24,7 @@
       {
           "type": "shell",
           "inline": [
+            "sudo apt-add-repository ppa:ansible/ansible",
             "sudo apt update",
             "sudo apt -y install ansible",
             "ansible-playbook --connection=local /tmp/ansible/playbook-api.yml"
