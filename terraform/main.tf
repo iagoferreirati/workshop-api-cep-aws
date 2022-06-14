@@ -39,7 +39,7 @@ resource "aws_security_group" "allow_http" {
 
 
   ingress {
-    description      = "TLS from VPC"
+    description      = "Allow port 80"
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
