@@ -22,6 +22,7 @@ data "aws_ami" "ami_via_cep" {
 }
 
 resource "aws_instance" "web" {
+  count                       = 4
   ami                         = data.aws_ami.ami_via_cep.id
   instance_type               = "t3.micro"
   associate_public_ip_address = true
